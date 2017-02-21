@@ -9,7 +9,7 @@ function handle_response(apiResponse){
 	var dataObj = apiResponse
 	process_data(dataObj)
 
-}
+	}
 
 //takes data from the source and repackages it
 function process_data(dataObj) {
@@ -40,9 +40,9 @@ function process_data(dataObj) {
 
 	build_html()
 
-}
+	}
 
-//takes re-packaged data and applies is it to the page
+//takes re-packaged data and builds an html string out of it
 function build_html(){
 
 	var legislatorNode = "<div class = 'legislator'>"
@@ -103,8 +103,7 @@ function build_html(){
 
 	}
 
-
-//creates an html string 
+//creates an html string for one node and sends it back to build_html
 function create_node(tag, selector, content, name){
 	
 	if(name){
@@ -115,7 +114,7 @@ function create_node(tag, selector, content, name){
 	}
 
 	return newNode
-}
+	}
 
 //adds the generated html to the page
 function modify_page(fullHTML){
@@ -124,7 +123,7 @@ function modify_page(fullHTML){
 	var legislatorsContainer = document.createElement("div")
 	legislatorsContainer.innerHTML = fullHTML
 	bodyNode.appendChild(legislatorsContainer)
-}
+	}
 
 //request data from congress.api and do something with it
 var promise = $.getJSON('https://congress.api.sunlightfoundation.com/legislators') 
