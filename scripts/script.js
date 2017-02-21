@@ -126,5 +126,5 @@ function modify_page(fullHTML){
 	}
 
 //request data from congress.api and do something with it
-var promise = $.getJSON('https://congress.api.sunlightfoundation.com/legislators') 
+var promise = $.get('https://congress.api.sunlightfoundation.com/legislators?apikey=123&callback=?') 
 promise.then(handle_response)
